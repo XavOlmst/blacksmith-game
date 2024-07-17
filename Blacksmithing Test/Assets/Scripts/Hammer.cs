@@ -6,7 +6,7 @@ public class Hammer : MonoBehaviour
 {
     [SerializeField] private float _hammerForce = 300f;
     [SerializeField] private IngotAxis _axis;
-    [SerializeField] private float _maxDeformPercent = 0.1f;
+    //[SerializeField] private float _maxDeformPercent = 0.1f;
     [SerializeField] private float _maxForce = 3000f;
     [SerializeField] private LayerMask ingotLayer;
     private float startHeight = 3;
@@ -42,8 +42,6 @@ public class Hammer : MonoBehaviour
         MeshMolding mesh = collision.gameObject.GetComponent<MeshMolding>();
         if (!mesh) return; //early out
 
-        ContactPoint contactPoint = collision.GetContact(0);
-
         //Split mesh at this point
         //Deform the part after the split by some hammering force
 
@@ -55,6 +53,8 @@ public class Hammer : MonoBehaviour
         //StartCoroutine(AddForceNextFrame(molding, contactPoint, _hammerForce));
         foreach(ContactPoint contact in collision.contacts)
         {
+            Vector3 localPoint = mesh.transform.InverseTransformPoint(contact.point);
+            //StartCoroutine(mesh.ImpactForceAtVertex(mesh.GetNearestVertex(contact.point), localPoint - contact.normal, _hammerForce));
             mesh.AddDeformingForce(contact.point + contact.normal * 0.1f, _hammerForce);
         }
 

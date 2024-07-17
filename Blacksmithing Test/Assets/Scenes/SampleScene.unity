@@ -301,9 +301,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7454b4c83b79d0e448c1bdaa470cc9e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _meshFilter: {fileID: 0}
-  _meshCollider: {fileID: 0}
-  _moldResistance: 0.99
+  _meshFilter: {fileID: 725994258}
+  _meshCollider: {fileID: 725994257}
   _minForce: 10
   _damping: 0.9
 --- !u!64 &725994257
@@ -328,6 +327,11 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 4068373912626513877, guid: 3b8514758b3061b4eba43b59c2293de5, type: 3}
+--- !u!33 &725994258 stripped
+MeshFilter:
+  m_CorrespondingSourceObject: {fileID: -5754084199372789682, guid: 3b8514758b3061b4eba43b59c2293de5, type: 3}
+  m_PrefabInstance: {fileID: 725994254}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,9 +546,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fcb1ab9e7f41c154e997dc8a42fa3938, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _hammerForce: 1500
+  _hammerForce: 500
   _axis: 0
-  _maxDeformPercent: 0.1
   _maxForce: 3000
   ingotLayer:
     serializedVersion: 2

@@ -13,7 +13,7 @@ public enum IngotAxis
 
 public class IngotMolding : MonoBehaviour
 {
-    [SerializeField] private MeshMolding _initMold;
+   /* [SerializeField] private MeshMolding _initMold;
     [SerializeField] private float _damping = 0.7f;
     [Range(0, 1)][SerializeField] private float _moldResistance = 0.7f;
     private List<MeshMolding> _meshMoldings = new List<MeshMolding>();
@@ -49,7 +49,7 @@ public class IngotMolding : MonoBehaviour
         }
     }
 
-/*    public void ReduceMeshScaleByPercent(MeshMolding mesh, float percent, IngotAxis axis)
+*//*    public void ReduceMeshScaleByPercent(MeshMolding mesh, float percent, IngotAxis axis)
     {
         Vector3 localScale = mesh.transform.localScale;
         Vector3 newScale =  localScale - (localScale * percent);
@@ -156,7 +156,7 @@ public class IngotMolding : MonoBehaviour
         }
 
         return nearestMesh;
-    }*/
+    }*//*
 
     //gods this is oddly complex...
     public float GetPercentAtPointOnAxis(MeshMolding mesh, Vector3 pos, IngotAxis axis)
@@ -247,8 +247,8 @@ public class IngotMolding : MonoBehaviour
             newMoldingMesh.ChangeVertexPos(newVertices[i], vertices[i]);
 
 
-            splittingMesh.ChangeVertexPos(vertices[i],  /*split point*/ vertices[i] + direction * percent);
-            newMoldingMesh.ChangeVertexPos(newVertices[i+1], /*split point*/ vertices[i] + direction * percent);
+            splittingMesh.ChangeVertexPos(vertices[i],  *//*split point*//* vertices[i] + direction * percent);
+            newMoldingMesh.ChangeVertexPos(newVertices[i+1], *//*split point*//* vertices[i] + direction * percent);
         }
 
         splittingMesh.ResetDisplaceVertices();
@@ -258,5 +258,5 @@ public class IngotMolding : MonoBehaviour
         newMoldingMesh.SetMoldingResistance(_moldResistance);
 
         _meshMoldings.Add(newMoldingMesh);
-    }
+    }*/
 }
